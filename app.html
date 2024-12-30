@@ -1,0 +1,220 @@
+```thinking
+Let me analyze the design and create a similar website with:
+
+1. A hero section with improved design
+2. Stats counter section showing 7+ years, 11,000+ customers, 10+ million in ad spend
+3. Features section with 3 columns showing key benefits:
+   - Comprehensive solutions
+   - Current practical knowledge 
+   - Large market potential
+4. Video section with heading and description
+
+I'll use:
+- Bootstrap for layout and components
+- AOS library for scroll animations
+- Counter-up for animated stats
+- Dark theme with blue accent color (#007bff)
+- Custom CSS for polish
+```
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business.de</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .hero {
+            background: linear-gradient(45deg, #000, #1a1a1a);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(0,123,255,0.1) 0%, transparent 50%);
+        }
+
+        .stats {
+            background: #0a0a0a;
+            padding: 60px 0;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .features {
+            padding: 80px 0;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 1.5rem;
+        }
+
+        .video-section {
+            background: #0a0a0a;
+            padding: 80px 0;
+        }
+
+        .blue-text {
+            color: #007bff;
+        }
+
+        .video-container {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .btn-primary {
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 mb-4" data-aos="fade-up">Willkommen bei <span class="blue-text">BUSINESS.DE</span></h1>
+                    <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">Ihre Plattform für digitales Business-Wachstum</p>
+                    <a href="#" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="200">Jetzt starten</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="stat-number" data-aos="fade-up"><span class="counter">7</span>+</div>
+                    <p>Jahre Erfahrung</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="stat-number" data-aos="fade-up" data-aos-delay="100"><span class="counter">11000</span>+</div>
+                    <p>Kunden</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-number" data-aos="fade-up" data-aos-delay="200"><span class="counter">10</span>+ Mio.</div>
+                    <p>Werbeausgaben (in Euro)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="text-center mb-5">Das zeichnet <span class="blue-text">BUSINESS.DE</span> aus</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Umfangreiche Komplettlösungen</h3>
+                        <p>Unsere Online-Kurse haben den Anspruch, deine einzige Quelle für Informationen zu sein. Du lernst bei uns alles, was du brauchst.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Aktuelles Wissen direkt aus der Praxis</h3>
+                        <p>Alle gelehrten Skills setzen wir selbst täglich ein, sowie Hunderte unserer über 7.400 Kunden.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Großes Marktpotenzial</h3>
+                        <p>Zu jedem dieser Skills haben wir genügend Beispiele von Kunden, die ausschließlich damit ein erfolgreiches Unternehmen aufgebaut haben.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Was du von <span class="blue-text">BUSINESS.DE</span> erwarten kannst:</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="video-container" data-aos="fade-right">
+                        <img src="https://via.placeholder.com/600x400" alt="Video thumbnail" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4">Praxisnahe Business-Skills</h3>
+                    <p>Hier lernst du die Skills, die du brauchst, um dir mit den aktuell gefragtesten Fähigkeiten eine eigene Agentur aufzubauen, die bei Unternehmen im Mittelstand echte Probleme löst.</p>
+                    <p>Unsere Skills kommen demnach direkt aus der Praxis, sind hoch nachgefragt und helfen dir erstklassige Ergebnisse für deine Kunden zu erzielen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    </script>
+
+</body>
+</html>
+```
