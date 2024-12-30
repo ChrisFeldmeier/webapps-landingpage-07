@@ -18,11 +18,11 @@ This application is a promotional website for a digital business platform, showc
 This application was generated using AI. Each version represents an iteration of the development process, with improvements and modifications based on user prompts.
 
 ### Latest Update
-Version 1
-here in the screenshot is the next section you should add below this hero section. make the hero section more beautfull
+Version 2
+bitte einfach nur die headline ändern
 
 ## Repository Structure
 - `app.html`: Main application code
 - `versions/`: Contains all versions of the application
-  - `v1.html`: Current version
-  - `v1.json`: Metadata for current version
+  - `v2.html`: Current version
+  - `v2.json`: Metadata for current version
